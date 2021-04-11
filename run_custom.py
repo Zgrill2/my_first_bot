@@ -6,7 +6,7 @@ from terranbot.bot import TerranBot
 from zergbot.bot import ZergBot
 from sc2 import Race
 from sc2.player import Bot
-
+from stalker_phoenix_bot.stalker_phoenix import MacroStalkers
 from bot_loader import GameStarter, BotDefinitions
 from version import update_version_txt
 
@@ -22,6 +22,11 @@ def add_definitions(definitions: BotDefinitions):
         "zergbot", lambda params: Bot(Race.Zerg, ZergBot()),
         None
     )
+    definitions.add_bot(
+        "macrostalkers", lambda params: Bot(Race.Protoss, MacroStalkers()),
+        None
+    )
+
 
 def main():
     update_version_txt()
